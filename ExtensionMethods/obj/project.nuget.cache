@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GOzKLE8R9AaWC02Pxnrq6UtPKvbHdnVkgfMDp/uUAQrCpEwYqcflyEfgOFSNAH95DlQzQsp6iI8SfIloyAV0qA==",
+  "dgSpecHash": "adDX5Qg7VUnrpSpacTMa6RyHTpLz+/iT0oq24j2AbocAr+x4TC4CO4eGCsWYieVKeYkAJ9uPc6rAnfrLVqvwwA==",
   "success": true,
-  "projectFilePath": "D:\\pocs\\C#Demos\\eXTENSIONmETHODS\\ExtensionMethods.csproj",
+  "projectFilePath": "D:\\POCs\\cSharpDemos\\ExtensionMethods\\ExtensionMethods.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

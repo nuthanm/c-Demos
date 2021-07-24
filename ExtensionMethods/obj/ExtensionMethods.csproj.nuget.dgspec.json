@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\pocs\\C#Demos\\eXTENSIONmETHODS\\ExtensionMethods.csproj": {}
+    "D:\\POCs\\cSharpDemos\\ExtensionMethods\\ExtensionMethods.csproj": {}
   },
   "projects": {
-    "D:\\pocs\\C#Demos\\eXTENSIONmETHODS\\ExtensionMethods.csproj": {
+    "D:\\POCs\\cSharpDemos\\ExtensionMethods\\ExtensionMethods.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\pocs\\C#Demos\\eXTENSIONmETHODS\\ExtensionMethods.csproj",
+        "projectUniqueName": "D:\\POCs\\cSharpDemos\\ExtensionMethods\\ExtensionMethods.csproj",
         "projectName": "ExtensionMethods",
-        "projectPath": "D:\\pocs\\C#Demos\\eXTENSIONmETHODS\\ExtensionMethods.csproj",
+        "projectPath": "D:\\POCs\\cSharpDemos\\ExtensionMethods\\ExtensionMethods.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\pocs\\C#Demos\\eXTENSIONmETHODS\\obj\\",
+        "outputPath": "D:\\POCs\\cSharpDemos\\ExtensionMethods\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
