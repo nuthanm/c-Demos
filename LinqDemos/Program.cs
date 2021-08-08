@@ -8,7 +8,7 @@ namespace LinqDemos
         {
             LinqQueries lq = new LinqQueries
             {
-                UseQuerySyntax = false,
+                UseQuerySyntax = true,
             };
 
             // var products = lq.GetAllColumns();
@@ -30,7 +30,15 @@ namespace LinqDemos
             //     Console.WriteLine($"{item}"); // LinqDemos.Entity.Product
             // }
 
-            lq.AnonymousClass();
+            // lq.AnonymousClass();
+
+            var products = lq.OrderByDescending();
+              foreach (var item in products)
+            {
+                Console.WriteLine($"{item.Name}"); // LinqDemos.Entity.Product
+            }
+
+
         }
     }
 }

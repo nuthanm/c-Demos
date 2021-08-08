@@ -110,5 +110,35 @@ namespace LinqDemos
             }
         }
 
+        public List<Product> OrderBy()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products orderby product.Name select product).ToList();
+            }
+            else
+            {
+                /*
+                Issue: Unhandled exception. System.InvalidOperationException: Failed to compare two elements in the array.
+                Solution: Change from Products.OrderBy(prod => prod).ToList(); to Products.OrderBy(prod => prod.Name).ToList();
+                */
+                return Products.OrderBy(prod => prod.Name).ToList();
+                /*
+                Note: .Select() method is optional when you are simply selecting an entire object as return value.
+                */
+            }
+        }
+
+        public List<Product> OrderByDescending()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products orderby product.Name descending select product).ToList();
+            }
+            else
+            {
+                return Products.OrderByDescending(prod => prod.Name).ToList();
+            }
+        }
     }
 }
