@@ -118,9 +118,15 @@ namespace LinqDemos
             // Console.WriteLine($"{product?.Name}");
 
             
-            var product = lq.SingleWithyWhereNotExists();
-            Console.WriteLine($"{product?.Name}");
+            // var product = lq.SingleWithyWhereNotExists();
+            // Console.WriteLine($"{product?.Name}");
 
+            
+            var colors = lq.GetDistinctRows();
+            foreach(var color in colors)
+            {
+                Console.WriteLine($"Color: {color}");
+            }
         }
     }
 }

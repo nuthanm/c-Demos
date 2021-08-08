@@ -374,5 +374,17 @@ namespace LinqDemos
                 return new Product();
             }
         }
+
+         public List<string> GetDistinctRows()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product.Color).Distinct().ToList();
+            }
+            else
+            {
+                return Products.Select(x => x.Color).Distinct().ToList();
+            }
+        }
     }
 }
