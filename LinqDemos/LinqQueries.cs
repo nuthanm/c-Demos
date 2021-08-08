@@ -140,5 +140,17 @@ namespace LinqDemos
                 return Products.OrderByDescending(prod => prod.Name).ToList();
             }
         }
+
+        public List<Product> OrderByTwoFields()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products orderby product.Color descending, product.Name select product).ToList();
+            }
+            else
+            {
+                return Products.OrderByDescending(prod => prod.Color).ThenBy(prod => prod.Name).ToList();
+            }
+        }
     }
 }

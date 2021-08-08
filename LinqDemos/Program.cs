@@ -8,7 +8,7 @@ namespace LinqDemos
         {
             LinqQueries lq = new LinqQueries
             {
-                UseQuerySyntax = true,
+                UseQuerySyntax = false,
             };
 
             // var products = lq.GetAllColumns();
@@ -32,7 +32,13 @@ namespace LinqDemos
 
             // lq.AnonymousClass();
 
-            var products = lq.OrderByDescending();
+            // var products = lq.OrderByDescending();
+            //   foreach (var item in products)
+            // {
+            //     Console.WriteLine($"{item.Name}"); // LinqDemos.Entity.Product
+            // }
+
+            var products = lq.OrderByTwoFields();
               foreach (var item in products)
             {
                 Console.WriteLine($"{item.Name}"); // LinqDemos.Entity.Product
