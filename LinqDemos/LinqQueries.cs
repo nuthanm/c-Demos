@@ -152,5 +152,43 @@ namespace LinqDemos
                 return Products.OrderByDescending(prod => prod.Color).ThenBy(prod => prod.Name).ToList();
             }
         }
+
+        public List<Product> WhereExpression()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products where product.Color == "Green" select product).ToList();
+            }
+            else
+            {
+                return Products.Where(prod => prod.Color == "Green").ToList();
+            }
+        }
+
+        public List<Product> WhereWithMultipleExpressions()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products where product.Color == "Green" && product.StandardCost > 10 select product).ToList();
+            }
+            else
+            {
+                return Products.Where(prod => prod.Color == "Green" && prod.StandardCost > 10).ToList();
+            }
+        }
+
+        public List<Product> UseCustomExtensionMethod()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product).ByColor("White").ToList();
+            }
+            else
+            {
+                return Products.ByColor("White").ToList();
+            }
+
+            
+        }
     }
 }

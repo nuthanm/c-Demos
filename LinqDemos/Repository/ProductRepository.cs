@@ -12,7 +12,7 @@ namespace LinqDemos.Repository
                     Id=1,
                     Name ="Himalyas",
                     Color="Green",
-                    StandardCost = 100,
+                    StandardCost = 11,
                     ListPrice = 20,
                     Size ="2",
                 },

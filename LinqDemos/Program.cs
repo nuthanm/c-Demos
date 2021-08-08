@@ -8,7 +8,7 @@ namespace LinqDemos
         {
             LinqQueries lq = new LinqQueries
             {
-                UseQuerySyntax = false,
+                UseQuerySyntax = true,
             };
 
             // var products = lq.GetAllColumns();
@@ -38,7 +38,25 @@ namespace LinqDemos
             //     Console.WriteLine($"{item.Name}"); // LinqDemos.Entity.Product
             // }
 
-            var products = lq.OrderByTwoFields();
+            // var products = lq.OrderByTwoFields();
+            //   foreach (var item in products)
+            // {
+            //     Console.WriteLine($"{item.Name}"); // LinqDemos.Entity.Product
+            // }
+
+            //  var products = lq.WhereExpression();
+            //   foreach (var item in products)
+            // {
+            //     Console.WriteLine($"{item.Name}"); // LinqDemos.Entity.Product
+            // }
+
+            // var products = lq.WhereWithMultipleExpressions();
+            //   foreach (var item in products)
+            // {
+            //     Console.WriteLine($"{item.Name}"); // LinqDemos.Entity.Product
+            // }
+
+            var products = lq.UseCustomExtensionMethod();
               foreach (var item in products)
             {
                 Console.WriteLine($"{item.Name}"); // LinqDemos.Entity.Product
