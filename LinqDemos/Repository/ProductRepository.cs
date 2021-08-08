@@ -19,7 +19,7 @@ namespace LinqDemos.Repository
                 new Product {
                     Id=2,
                     Name ="Santoor",
-                    Color="White",
+                    Color="Orange",
                     StandardCost = 140,
                     ListPrice = 25,
                     Size ="20",
@@ -27,7 +27,7 @@ namespace LinqDemos.Repository
                 new Product {
                     Id=3,
                     Name ="Old Chintol",
-                    Color="Dark Green",
+                    Color="Orange",
                     StandardCost = 130,
                     ListPrice = 30,
                     Size ="1",

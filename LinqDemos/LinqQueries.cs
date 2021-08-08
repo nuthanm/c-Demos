@@ -187,8 +187,192 @@ namespace LinqDemos
             {
                 return Products.ByColor("White").ToList();
             }
+        }
 
-            
+        public Product FirstWithOutAnyWhere()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product).First();
+            }
+            else
+            {
+                return Products.First();
+            }
+        }
+
+
+        public Product FirstWithyWhereNotExists()
+        {
+            try
+            {
+                if (UseQuerySyntax)
+                {
+                    return (from product in Products select product).First(x => x.Color == "Orange");
+                }
+                else
+                {
+                    return Products.First(x => x.Color == "Orange");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("No product found with that search item: " + ex.Message);
+                return new Product();
+            }
+        }
+
+        public Product FirstOrDefaultWithyWhereNotExists()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product).FirstOrDefault(x => x.Color == "Orange");
+            }
+            else
+            {
+                return Products.FirstOrDefault(x => x.Color == "Orange");
+            }
+        }
+
+        public Product FirstWithyWhereExists()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product).First(x => x.Color == "White");
+            }
+            else
+            {
+                return Products.First(x => x.Color == "White");
+            }
+        }
+
+        public Product LastWithOutAnyWhere()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product).Last();
+            }
+            else
+            {
+                return Products.Last();
+            }
+        }
+
+        public Product LastWithyWhereNotExists()
+        {
+            try
+            {
+                if (UseQuerySyntax)
+                {
+                    return (from product in Products select product).Last(x => x.Color == "Orange");
+                }
+                else
+                {
+                    return Products.Last(x => x.Color == "Orange");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("No product found with that search item: " + ex.Message);
+                return new Product();
+            }
+        }
+
+        public Product LastOrDefaultWithyWhereNotExists()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product).LastOrDefault(x => x.Color == "Orange");
+            }
+            else
+            {
+                return Products.LastOrDefault(x => x.Color == "Orange");
+            }
+        }
+
+        public Product LastWithyWhereExists()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product).Last(x => x.Color == "White");
+            }
+            else
+            {
+                return Products.Last(x => x.Color == "White");
+            }
+        }
+
+
+        public Product SingleWithOutAnyWhere()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product).Single();
+            }
+            else
+            {
+                return Products.Single();
+            }
+        }
+
+        public Product SingleWithyWhereNotExists()
+        {
+            try
+            {
+                if (UseQuerySyntax)
+                {
+                    return (from product in Products select product).Single(x => x.Color == "White");
+                }
+                else
+                {
+                    return Products.Single(x => x.Color == "White");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("No product found with that search item using Single(): " + ex.Message);
+                return new Product();
+            }
+        }
+
+        public Product SingleOrDefaultWithWhereNotExists()
+        {
+            try
+            {
+                if (UseQuerySyntax)
+                {
+                    return (from product in Products select product).SingleOrDefault(x => x.Color == "Orange");
+                }
+                else
+                {
+                    return Products.SingleOrDefault(x => x.Color == "Orange");
+                }                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("More than one element found using SingleOrDefault() " + ex.Message);
+                return new Product();
+            }
+        }
+
+        public Product SingleWithWhereExists()
+        {
+            try
+            {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product).Single(x => x.Color == "White");
+            }
+            else
+            {
+                return Products.Single(x => x.Color == "White");
+            }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("More than one item found using Single() method: "+ ex.Message);
+                return new Product();
+            }
         }
     }
 }
