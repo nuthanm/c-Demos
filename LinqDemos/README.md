@@ -14,4 +14,13 @@
 3. OrderBy - Either by Single or More than one field
    - Descending
    - Ascending - **Default**
-4.  
+4.  Filtering Records
+   - Using Single Column
+   - Using more than one column separation with operators (&&,||)
+   - Create our own Extension method to filter
+5. Select a single item - Use anyone of the following options to get.
+   - First()/FirstOrDefault()
+   - Last()/LastOrDefault()
+   - Single()/SingleOrDefault()
+   - Difference between these ?
+     - First()/Last()/Single()/SingleorDefault() - Explicity add catch when there is no records or more than one records.
