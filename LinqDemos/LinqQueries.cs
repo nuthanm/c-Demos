@@ -1,0 +1,114 @@
+using LinqDemos.Entity;
+using LinqDemos.Repository;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LinqDemos
+{
+    public class LinqQueries
+    {
+        #region Properties
+        public List<Product> Products { get; set; }
+        public bool UseQuerySyntax { get; set; }
+        #endregion Properties
+        public LinqQueries()
+        {
+            Products = ProductRepository.GetAll();
+        }
+
+        public List<Product> GetAllColumns()
+        {
+            /*
+            Issue 1:
+            Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<LinqDemos.Entity.Product>' to 'System.Collections.Generic.List<LinqDemos.Entity.Product>'. An explicit conversion exists (are you missing a cast?) [LinqDemos]csharp(CS0266)
+            Solution:
+            Change from ProductRepository.GetAll().Select(prod => prod) to ProductRepository.GetAll().Select(prod => prod).ToList()
+
+            */
+
+            if (UseQuerySyntax)
+            {
+                return (from product in Products
+                        select product).ToList();
+            }
+            else
+            {
+                return Products.Select(prod => prod).ToList();
+            }
+        }
+
+        public List<string> GetSingleColumn()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product.Name).ToList();
+            }
+            else
+            {
+                return Products.Select(prod => prod.Name).ToList();
+            }
+        }
+
+        public void GetSpeficColumns()
+        {
+            if (UseQuerySyntax)
+            {
+                Products = (from prod in Products
+                            select new Product
+                            {
+                                Id = prod.Id,
+                                Name = prod.Name,
+                                Color = prod.Color
+                            }).ToList();
+            }
+            else
+            {
+                Products = Products.Select(
+                    prod => new Product
+                    {
+                        Id = prod.Id,
+                        Name = prod.Name,
+                        Color = prod.Color
+                    }).ToList();
+
+            }
+        }
+
+        public void AnonymousClass()
+        {
+
+            if (UseQuerySyntax)
+            {
+                var anonymousProdcuts = (from prod in Products
+                                         select new
+                                         {
+                                             Id = prod.Id,
+                                             Name = prod.Name,
+                                             Color = prod.Color
+                                         }).ToList();
+
+                foreach (var prod in anonymousProdcuts)
+                {
+                    Console.WriteLine($"Name:{prod.Name}");
+                }
+            }
+            else
+            {
+                var anonymousProdcuts = Products.Select(
+                    prod => new
+                    {
+                        Id = prod.Id,
+                        Name = prod.Name,
+                        Color = prod.Color
+                    }).ToList();
+
+                foreach (var prod in anonymousProdcuts)
+                {
+                    Console.WriteLine($"Name:{prod.Name}");
+                }
+            }
+        }
+
+    }
+}
