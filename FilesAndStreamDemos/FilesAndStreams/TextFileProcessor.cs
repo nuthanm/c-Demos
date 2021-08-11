@@ -17,6 +17,7 @@ namespace FilesAndStreamDemos
         public void Process()
         {
             ReadAllTextAndSave();
+            ReadAllLinesAndSave();
         }
 
         private void ReadAllTextAndSave()
@@ -30,6 +31,19 @@ namespace FilesAndStreamDemos
 
             // Step 3: Store this content in another file
             File.WriteAllText(OutputFilePath, modifiedOriginalContent);
+        }
+
+        private void ReadAllLinesAndSave()
+        {
+            // Step 1: Assuming file is already there in a specified folder and read all the lines and store it into Inmemory (string[] variable)
+            string[] lines = File.ReadAllLines(InputFilePath);
+            // Step 2: Modified any line of text.
+            lines[0] = lines[0].ToUpperInvariant();
+
+            Console.WriteLine(lines);
+
+            // Step 3: Store this entire lines in another file
+            File.WriteAllLines(OutputFilePath, lines);
         }
     }
 }
