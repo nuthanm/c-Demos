@@ -40,8 +40,6 @@ namespace FilesAndStreamDemos
             // Step 2: Modified any line of text.
             lines[0] = lines[0].ToUpperInvariant();
 
-            Console.WriteLine(lines);
-
             // Step 3: Store this entire lines in another file
             File.WriteAllLines(OutputFilePath, lines);
         }

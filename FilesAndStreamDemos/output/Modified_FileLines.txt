@@ -13,7 +13,3 @@
 7. Reading and writing entire contents of binary files (Inmemory)
 
 8. Considerations of in-memory file processing
-
- 
-
-

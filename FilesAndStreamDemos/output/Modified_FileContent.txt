@@ -1,19 +1,15 @@
 1. READING ENTIRE TEXT FILES INTO AN IN-MEMORY STRING
 
-2. WRITING AN ENTIRE STRING TO A FILE
+2. Writing an entire string to a file
 
-3. READING ENTIRE TEXT FILES INTO AN IN-MEMORY STRING ARRAY
+3. Reading entire text files into an in-memory string array
 
-4. WRITING TEXT FILES FROM STRING ARRAYS
+4. Writing text files from string arrays
 
-5. SPECIFY TEXT FILE ENCODINGS DURING WRITE OR READ OPERATIONS
+5. Specify text file encodings during write or read operations
 
-6. APPENDING TEXT CONTENT TO EXISTING FILES
+6. Appending text content to existing files
 
-7. READING AND WRITING ENTIRE CONTENTS OF BINARY FILES (INMEMORY)
+7. Reading and writing entire contents of binary files (Inmemory)
 
-8. CONSIDERATIONS OF IN-MEMORY FILE PROCESSING
-
- 
-
-
+8. Considerations of in-memory file processing
