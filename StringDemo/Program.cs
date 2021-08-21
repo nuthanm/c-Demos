@@ -29,6 +29,7 @@ namespace StringDemo
             GetASubString();
             ReplaceAString();
             InsertingText();
+            RemovingText();
         }
 
         private static void StringConversions()
@@ -409,6 +410,13 @@ namespace StringDemo
         {
             string text = "Hello!!! talli";
             Console.WriteLine(text.Insert(8, "Chinni"));
+        }
+        private static void RemovingText()
+        {
+            string text = "Hello!!! Chinni talli";
+            Console.WriteLine(text.Remove(8));
+
+            Console.WriteLine(text.Remove(8,2));
         }
     }
 }
