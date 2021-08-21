@@ -20,9 +20,10 @@ namespace StringDemo
             EscapeString();
             AppendingStrings();
             InterpolationAndLiteral();
-            StringBuilderDemo();
+            // StringBuilderDemo();
             WorkingWithArrays();
             PadAndTrim();
+            SearchingStrings();
         }
 
         private static void StringConversions()
@@ -237,5 +238,49 @@ namespace StringDemo
 
 
         }
+        private static void SearchingStrings()
+        {
+            string textToSearch ="This is a text to a user to search for a content";
+            bool searchStatus = false;
+            int wordStartInIndex;
+
+            searchStatus = textToSearch.StartsWith("This");
+            Console.WriteLine($"Starts With \"This \": {searchStatus}");
+            
+            searchStatus = textToSearch.StartsWith("this");
+            Console.WriteLine($"Starts With \"this \": {searchStatus}"); // Gives false because case-sensitve check: This != this
+
+            searchStatus = textToSearch.EndsWith("content");
+            Console.WriteLine($"Ends With \"content\": {searchStatus}");
+            
+            searchStatus = textToSearch.EndsWith("conten");
+            Console.WriteLine($"Ends With \"conten\": {searchStatus}"); // Gives false because case-sensitve check: This != this
+
+            searchStatus = textToSearch.Contains("search");
+            Console.WriteLine($"Contains wtih Case-sensitive \"search \": {searchStatus}");
+            
+            searchStatus = textToSearch.Contains("For", StringComparison.InvariantCultureIgnoreCase);
+            Console.WriteLine($"Contains with case-Insensitive \"For \": {searchStatus}"); // Gives true because case-insensitve check
+
+            wordStartInIndex = textToSearch.IndexOf("search");
+            Console.WriteLine($"IndexOf wtih actual text  \"search \": {wordStartInIndex}"); // Output : 28 - Starts search position at 28th
+
+            wordStartInIndex = textToSearch.IndexOf("Search");
+            Console.WriteLine($"IndexOf wtih Case-sensitive \"Search \": {wordStartInIndex}"); // Output : -1 beacuse of case-sensitve check
+            
+            wordStartInIndex = textToSearch.IndexOf("search", 29);
+            Console.WriteLine($"IndexOf wtih Case-sensitive \"search \" after 29th position: {wordStartInIndex}"); // Output : -1 beacuse after 28th there is no search text.
+
+            textToSearch = "Potti Nani Potti Nani";
+            
+            wordStartInIndex = textToSearch.LastIndexOf("Nani");
+            Console.WriteLine($"LastIndexOf wtih Case-sensitive \"Nani\": {wordStartInIndex}"); // Output : LastIndexOf wtih Case-sensitive "Nani": 17
+            
+            wordStartInIndex = textToSearch.LastIndexOf("Nani",12);
+            Console.WriteLine($"LastIndexOf wtih Case-sensitive \"Nani \" before 12th position: {wordStartInIndex}"); // Output : LastIndexOf wtih Case-sensitive "Nani " before 12th position: 6
+
+            wordStartInIndex = textToSearch.LastIndexOf("Nani",2);
+            Console.WriteLine($"LastIndexOf wtih Case-sensitive \"Nani \" before 2th position: {wordStartInIndex}"); // Output : LastIndexOf wtih Case-sensitive "Nani " before 2nd position: -1
+        }    
     }
 }
