@@ -26,6 +26,7 @@ namespace StringDemo
             SearchingStrings();
             OrderingStrings();
             TestingEquality();
+            GetASubString();
         }
 
         private static void StringConversions()
@@ -342,7 +343,6 @@ namespace StringDemo
             EqualityHelper(null,null);
             EqualityHelper("nani","Nani");
         }
-
         private static void EqualityHelper(string? strA, string? strB)
         {
             bool boolStatus;
@@ -377,5 +377,23 @@ namespace StringDemo
                 Console.WriteLine($"==: '{strA ?? "null"}' does not equals '{strB ?? "null" }'");
             }
         }    
+        private static void GetASubString()
+        {
+            string getSpeficStringFromThis = "Get sometext from this text";
+            string subSetResult;
+
+            subSetResult = getSpeficStringFromThis.Substring(2); // Starts from 3rd character - i.e., from t
+            Console.WriteLine($"'{subSetResult}'"); // Output: 't sometext from this text'
+
+            
+            subSetResult = getSpeficStringFromThis.Substring(3); // Starts from 3rd character - i.e., from space
+            Console.WriteLine($"'{subSetResult}'"); // Output: ' sometext from this text'
+
+            subSetResult = getSpeficStringFromThis.Substring(6); // Starts from 6th character - i.e., from metext
+            Console.WriteLine($"'{subSetResult}'"); // Output: 'metext from this text'
+
+            subSetResult = getSpeficStringFromThis.Substring(6, 5); // Starts from 6th character  and take 5 charecters- i.e., from metext
+            Console.WriteLine($"'{subSetResult}'"); // Output: 'metex'
+        }
     }
 }
