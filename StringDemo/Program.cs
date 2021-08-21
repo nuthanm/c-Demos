@@ -289,6 +289,13 @@ namespace StringDemo
             CompareToHelper("Nani","Chinni");
             CompareToHelper("Potti","Potti");
             CompareToHelper("Potti",null);
+           //  CompareToHelper(null,null); // Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object.
+            
+            CompareHelper("Nani","Potti");
+            CompareHelper(null,"Chinni");
+            CompareHelper("Potti","Potti");
+            CompareHelper("Potti",null);
+            CompareHelper(null,null);
         }
 
         private static void CompareToHelper(string strA, string? strB) // Once we add this setting in project file : <nullable>enable</nullable> issue will solve.
@@ -307,5 +314,21 @@ namespace StringDemo
                 break;
             }
         }
+         private static void CompareHelper(string? strA, string? strB)
+         {
+             int resultsInt = String.Compare(strA,strB);
+            switch(resultsInt)
+            {
+                case > 0:
+                Console.WriteLine($"Compare: {strB ?? "null"} comes before {strA}");
+                break;                
+                case < 0:
+                Console.WriteLine($"Compare: {strA ?? "null"} comes before {strB}");
+                break;
+                case 0:
+                Console.WriteLine($"Compare: {strA ?? "null"} is same as {strB ?? "null"}");
+                break;
+            }
+         }
     }
 }
