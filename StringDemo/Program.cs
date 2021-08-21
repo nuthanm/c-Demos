@@ -28,6 +28,7 @@ namespace StringDemo
             TestingEquality();
             GetASubString();
             ReplaceAString();
+            InsertingText();
         }
 
         private static void StringConversions()
@@ -403,6 +404,11 @@ namespace StringDemo
             Console.WriteLine(text.Replace(textToReplace,"Chinni"));
             Console.WriteLine(text.Replace(textToReplace,"Chinni", StringComparison.InvariantCultureIgnoreCase));
 
+        }
+        private static void InsertingText()
+        {
+            string text = "Hello!!! talli";
+            Console.WriteLine(text.Insert(8, "Chinni"));
         }
     }
 }
