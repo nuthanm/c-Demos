@@ -370,11 +370,11 @@ namespace StringDemo
             boolStatus = strA == strB;
             if(boolStatus)
             {
-                Console.WriteLine($"Equals:  '{strA ?? "null"}' equals '{strB ?? "null" }'");
+                Console.WriteLine($"==:  '{strA ?? "null"}' equals '{strB ?? "null" }'");
             }
             else
             {
-                Console.WriteLine($"Equals: '{strA ?? "null"}' does not equals '{strB ?? "null" }'");
+                Console.WriteLine($"==: '{strA ?? "null"}' does not equals '{strB ?? "null" }'");
             }
         }    
     }
