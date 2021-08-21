@@ -347,10 +347,30 @@ namespace StringDemo
         {
             bool boolStatus;
 
-            boolStatus = String.Equals(strA, strB, StringComparison.InvariantCultureIgnoreCase);
+            boolStatus = String.Equals(strA, strB);
             if(boolStatus)
             {
                 Console.WriteLine($"Equals: '{strA ?? "null"}' equals '{strB ?? "null" }'");
+            }
+            else
+            {
+                Console.WriteLine($"Equals: '{strA ?? "null"}' does not equals '{strB ?? "null" }'");
+            }
+
+            boolStatus = String.Equals(strA, strB, StringComparison.InvariantCultureIgnoreCase);
+            if(boolStatus)
+            {
+                Console.WriteLine($"Equals: (Ignore-Case) '{strA ?? "null"}' equals '{strB ?? "null" }'");
+            }
+            else
+            {
+                Console.WriteLine($"Equals: (Ignore-Case) '{strA ?? "null"}' does not equals '{strB ?? "null" }'");
+            }
+
+            boolStatus = strA == strB;
+            if(boolStatus)
+            {
+                Console.WriteLine($"Equals:  '{strA ?? "null"}' equals '{strB ?? "null" }'");
             }
             else
             {
