@@ -25,6 +25,7 @@ namespace StringDemo
             PadAndTrim();
             SearchingStrings();
             OrderingStrings();
+            TestingEquality();
         }
 
         private static void StringConversions()
@@ -314,7 +315,7 @@ namespace StringDemo
                 break;
             }
         }
-         private static void CompareHelper(string? strA, string? strB)
+        private static void CompareHelper(string? strA, string? strB)
          {
              int resultsInt = String.Compare(strA,strB);
             switch(resultsInt)
@@ -330,5 +331,31 @@ namespace StringDemo
                 break;
             }
          }
+        private static void TestingEquality()
+        {
+            EqualityHelper("Nani","Potti");
+            EqualityHelper("Nani","Chinni");
+            EqualityHelper("Potti","Potti");
+            EqualityHelper("Potti",null);
+            EqualityHelper("","");
+            EqualityHelper(null,"");
+            EqualityHelper(null,null);
+            EqualityHelper("nani","Nani");
+        }
+
+        private static void EqualityHelper(string? strA, string? strB)
+        {
+            bool boolStatus;
+
+            boolStatus = String.Equals(strA, strB, StringComparison.InvariantCultureIgnoreCase);
+            if(boolStatus)
+            {
+                Console.WriteLine($"Equals: '{strA ?? "null"}' equals '{strB ?? "null" }'");
+            }
+            else
+            {
+                Console.WriteLine($"Equals: '{strA ?? "null"}' does not equals '{strB ?? "null" }'");
+            }
+        }    
     }
 }
