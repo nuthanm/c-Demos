@@ -24,6 +24,7 @@ namespace StringDemo
             WorkingWithArrays();
             PadAndTrim();
             SearchingStrings();
+            OrderingStrings();
         }
 
         private static void StringConversions()
@@ -282,5 +283,29 @@ namespace StringDemo
             wordStartInIndex = textToSearch.LastIndexOf("Nani",2);
             Console.WriteLine($"LastIndexOf wtih Case-sensitive \"Nani \" before 2th position: {wordStartInIndex}"); // Output : LastIndexOf wtih Case-sensitive "Nani " before 2nd position: -1
         }    
+        private static void OrderingStrings()
+        {
+            CompareToHelper("Nani","Potti");
+            CompareToHelper("Nani","Chinni");
+            CompareToHelper("Potti","Potti");
+            CompareToHelper("Potti",null);
+        }
+
+        private static void CompareToHelper(string strA, string? strB) // Once we add this setting in project file : <nullable>enable</nullable> issue will solve.
+        {
+            int resultsInt = strA.CompareTo(strB);
+            switch(resultsInt)
+            {
+                case > 0:
+                Console.WriteLine($"CompareTo: {strB ?? "null"} comes before {strA}");
+                break;                
+                case < 0:
+                Console.WriteLine($"CompareTo: {strA} comes before {strB}");
+                break;
+                case 0:
+                Console.WriteLine($"CompareTo: {strA} is same as {strB}");
+                break;
+            }
+        }
     }
 }
