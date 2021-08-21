@@ -27,6 +27,7 @@ namespace StringDemo
             OrderingStrings();
             TestingEquality();
             GetASubString();
+            ReplaceAString();
         }
 
         private static void StringConversions()
@@ -394,6 +395,14 @@ namespace StringDemo
 
             subSetResult = getSpeficStringFromThis.Substring(6, 5); // Starts from 6th character  and take 5 charecters- i.e., from metext
             Console.WriteLine($"'{subSetResult}'"); // Output: 'metex'
+        }
+        private static void ReplaceAString()
+        {
+            string textToReplace ="Potti";
+            string text = "Hello!!! potti";
+            Console.WriteLine(text.Replace(textToReplace,"Chinni"));
+            Console.WriteLine(text.Replace(textToReplace,"Chinni", StringComparison.InvariantCultureIgnoreCase));
+
         }
     }
 }
