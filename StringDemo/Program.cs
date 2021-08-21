@@ -20,7 +20,7 @@ namespace StringDemo
             EscapeString();
             AppendingStrings();
             InterpolationAndLiteral();
-            // StringBuilderDemo();
+            StringBuilderDemo();
             WorkingWithArrays();
             PadAndTrim();
             SearchingStrings();
@@ -414,9 +414,9 @@ namespace StringDemo
         private static void RemovingText()
         {
             string text = "Hello!!! Chinni talli";
-            Console.WriteLine(text.Remove(8));
+            Console.WriteLine(text.Remove(8)); // Remove starts at 8th position and it removes all after that.
 
-            Console.WriteLine(text.Remove(8,2));
+            Console.WriteLine(text.Remove(8,2)); // Remove starts at 8th position and it removes only 2 charecters
         }
     }
 }
