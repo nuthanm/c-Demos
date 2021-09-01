@@ -8,7 +8,7 @@ namespace LinqDemos
         {
             LinqQueries lq = new LinqQueries
             {
-                UseQuerySyntax = true,
+                UseQuerySyntax = false,
             };
 
             // var products = lq.GetAllColumns();
@@ -122,6 +122,9 @@ namespace LinqDemos
             // Console.WriteLine($"{product?.Name}");
 
             
+            var isAvailable = lq.LinqWithAny();
+            Console.WriteLine("IsAvaiable:" + isAvailable);
+
             var colors = lq.GetDistinctRows();
             foreach(var color in colors)
             {

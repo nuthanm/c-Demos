@@ -386,5 +386,29 @@ namespace LinqDemos
                 return Products.Select(x => x.Color).Distinct().ToList();
             }
         }
+
+        public List<string> LinqOp()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products select product.Color).Distinct().ToList();
+            }
+            else
+            {
+                return Products.Select(x => x.Color).Distinct().ToList();
+            }
+        }
+
+        public bool LinqWithAny()
+        {
+            if (UseQuerySyntax)
+            {
+                return (from product in Products where product.Color == "Nani" select product.Color).Any();
+            }
+            else
+            {
+                return Products.Where(x=>x.Color  == "Potti").Any();
+            }
+        }
     }
 }
