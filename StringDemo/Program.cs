@@ -15,21 +15,68 @@ namespace StringDemo
 
         private static void StringOperations()
         {
-            StringConversions();
-            StringAsArray();
-            EscapeString();
-            AppendingStrings();
-            InterpolationAndLiteral();
-            StringBuilderDemo();
-            WorkingWithArrays();
-            PadAndTrim();
-            SearchingStrings();
-            OrderingStrings();
-            TestingEquality();
-            GetASubString();
-            ReplaceAString();
-            InsertingText();
-            RemovingText();
+        //     StringConversions();
+        //     StringAsArray();
+        //     EscapeString();
+        //     AppendingStrings();
+        //     InterpolationAndLiteral();
+        //     StringBuilderDemo();
+        //     WorkingWithArrays();
+        //     PadAndTrim();
+        //     SearchingStrings();
+        //     OrderingStrings();
+        //     TestingEquality();
+        //     GetASubString();
+        //     ReplaceAString();
+        //     InsertingText();
+        //     RemovingText();
+            
+        //     // Which one is correct?
+        //     string s=null;
+        //     string s1='';
+        //     string s2="";
+        //     string s3=string.Empty();
+        //     string s4=string.Empty; 
+            
+            string str = "Potti";
+            
+            // Get a character from a string
+            Console.WriteLine("First character from a string: " +str[0]); // P
+
+            Console.WriteLine("HashCode for the given String: " + str.GetHashCode()); // 1241423843
+            
+            Console.WriteLine("Get type of this : " + str.GetType()); // System.String
+            
+            Console.WriteLine("Get typeCode of this : " + str.GetTypeCode()); // String
+
+            Console.WriteLine("Is Normalized or not : " + str.IsNormalized());
+
+            Console.WriteLine("Get normalize : " + str.Normalize());
+
+            Console.WriteLine("Get normalize with different options : " + str.Normalize(NormalizationForm.FormC));
+            Console.WriteLine("Get normalize with different options : " + str.Normalize(NormalizationForm.FormD));
+            Console.WriteLine("Get normalize with different options : " + str.Normalize(NormalizationForm.FormKC));
+            Console.WriteLine("Get normalize with different options : " + str.Normalize(NormalizationForm.FormKD));
+
+            // Convert from string to charArray
+            char[] chr = str.ToCharArray();
+            for(int i = 0 ; i < chr.Length; i++)
+            {
+                Console.WriteLine($"Character of {i} is {chr[i]}");
+            }
+            
+            Console.WriteLine($"As memory: {"".AsMemory()}");
+
+            // Convert to ASCII
+            char c = 'a';
+            Console.WriteLine("ASCII Value of a : " + (int)c);
+
+            
+            // Convert to char from ASCII
+            int a = 65;
+            Console.WriteLine("Character for a = 65: " + (char)a);
+
+            
         }
 
         private static void StringConversions()
