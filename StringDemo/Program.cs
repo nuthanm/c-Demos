@@ -10,7 +10,7 @@ namespace StringDemo
         static void Main(string[] args)
         {
             Console.WriteLine("String Operations demos");
-            StringOperations();
+                        // StringOperations();
         }
 
         private static void StringOperations()
@@ -31,12 +31,12 @@ namespace StringDemo
         //     InsertingText();
         //     RemovingText();
             
-        //     // Which one is correct?
-        //     string s=null;
-        //     string s1='';
-        //     string s2="";
-        //     string s3=string.Empty();
-        //     string s4=string.Empty; 
+            // // Which one is correct?
+            // string s=null;
+            // string s1='';
+            // string s2="";
+            // string s3=string.Empty();
+            // string s4=string.Empty; 
             
             string str = "Potti";
             

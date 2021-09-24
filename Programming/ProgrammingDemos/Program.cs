@@ -6,38 +6,46 @@ namespace ProgrammingDemos
     class Program
     {
         static void Main(string[] args)
-        {            
-            // Dvd[] dvdCollection = new Dvd[15];
-            // Dvd naniLovesPotti = new Dvd("NaniLovesPotti",2021, "Nani");
-            // dvdCollection[9] = naniLovesPotti;
-            
-            // // Console.WriteLine(dvdCollection[8]);
+        {           
 
-            // #region ArrayofSquareIntegers
-            // int[] squres = new int[9];
+        var gcd = CalcuateGCD(20,8);
+        Console.WriteLine($"GCD of 20 & 8 is {gcd}");
 
-            // for(int i =0 ;i < 9; i++)
-            // {
-            //     squres[i] = (i*i);
-            // }
 
-            // foreach(int square in squres)
-            // {
-            //     Console.WriteLine($"Value of square: {square}");
-            // }
-            // #endregion
+        gcd = CalcuateGCD(6,10);
+        Console.WriteLine($"GCD of 6 & 10 is {gcd}");
 
-            // // Read Movies from an array
-            // foreach(var movie in dvdCollection)
-            // {
-            //     Console.WriteLine( dvdCollection[9] );
-            // }
 
-        string s1 = "abc*";
-        string s2 = "abd*";
+        // string s1 = "abc*";
+        // string s2 = "abd*";
 
-        var result = CompareStrings(s1,s2);
+        // var result = CompareStrings(s1,s2);
         
+        }
+
+        private static int CalcuateGCD(int a, int b)
+        {
+            // int r = -1;
+            // while(r != 0) // -1!=0 => 4!=0
+            // {
+            //     if(a > b) // 20 > 8 => 8 > 4
+            //     {   
+            //         r = (a % b) == 0 ? 0 : (a % b); // 20%8 <> 0 => r = 4 ; 8%4 == 0 => r=4      
+            //         if(r!=0)
+            //         {
+            //             a = b; // a = 20 => 8 => 4                    
+            //             b = r; // 8 => 4 =>4
+            //         }
+            //     }
+            // }
+            int temp;
+            while(b != 0) // 8!=0 => 4!=0 => 0!=0 (Stop and result is 2)
+            {
+                temp = a; // 20 => 8
+                a = b; // 8 => 4
+                b = temp % b; // 20 % 8 <> 0 => 4 => 8 % 4 == 0
+            }
+            return a;
         }
 
         private static bool CompareStrings(string s1, string s2)
