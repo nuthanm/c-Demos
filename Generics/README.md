@@ -20,6 +20,12 @@
 2. No type saftey issue.
 3. Code reusable
 
+**System.Collections.Generic** namespace has several generic classes
+1. List<T>
+2. Queue<T>
+3. Stack<T>
+4. Dictionary<TKey, TValue>
+
 ### Reference code is based on learning activity from Plural Sight course
 Course Author: **Thomas Claudius Huber**
 
