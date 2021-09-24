@@ -1,6 +1,6 @@
 ## Sample code on base of Generics
 
-**Generic** allows to make class,method, interface to reusable (i.e., avoid code duplicate), functionality perform well as expected if we pass any type of values.
+**Generic** allows to make class,method, interface to reusable (i.e., avoid code duplicate), functionality perform well as expected if we pass same type of values during execution. It fails during compilation whichs avoids type face run time issue.
 
 **Apply Generics on **
 1. Classes
