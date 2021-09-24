@@ -7,10 +7,17 @@
 2. Methods
 3. Interfaces
 
+**Scenario: Problems with Value to Object approach**
+1. Type safety issue
+2. Boxing and unboxing
+
+**Scenario: Problems with Copy and paste for each type**
+1. No code reusable
+2. Duplicate of same set of logic
 
 **Scenario to go Generics:**
 1. No boxing and un boxing => Value to Object (Boxing) and Object to Value (Unboxing)
-2. No type face issue.
+2. No type saftey issue.
 
 ### Reference code is based on learning activity from Plural Sight course
 Course Author: **Thomas Claudius Huber**
