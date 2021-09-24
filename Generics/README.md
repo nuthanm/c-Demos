@@ -18,6 +18,7 @@
 **Scenario to go Generics:**
 1. No boxing and un boxing => Value to Object (Boxing) and Object to Value (Unboxing)
 2. No type saftey issue.
+3. Code reusable
 
 ### Reference code is based on learning activity from Plural Sight course
 Course Author: **Thomas Claudius Huber**
