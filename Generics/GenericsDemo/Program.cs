@@ -12,7 +12,8 @@ namespace GenericsDemo
         }
 
         private static void StackDouble(){
-            var stackDouble = new StackDouble();
+            // var stackDouble = new StackDouble();
+            var stackDouble = new Stack<Double>();
             stackDouble.Push(1.2);
             stackDouble.Push(2.2);
             stackDouble.Push(3.4);
@@ -25,7 +26,8 @@ namespace GenericsDemo
 
         private static void StackStrings()
         {
-             var stackDouble = new StackStrings();
+            //var stackDouble = new StackStrings();
+            var stackDouble = new Stack<string>();
             stackDouble.Push("Nani");
             stackDouble.Push("Potti");
             stackDouble.Push("Nani Potti");
