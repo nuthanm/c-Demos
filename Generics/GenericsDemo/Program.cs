@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GenericsDemo
 {
@@ -13,7 +14,8 @@ namespace GenericsDemo
 
         private static void StackDouble(){
             // var stackDouble = new StackDouble();
-            var stackDouble = new Stack<Double>();
+            // var stackDouble = new SimpleStack<Double>();
+            var stackDouble = new Stack<Double>(); // from namespace
             stackDouble.Push(1.2);
             stackDouble.Push(2.2);
             stackDouble.Push(3.4);
@@ -27,7 +29,7 @@ namespace GenericsDemo
         private static void StackStrings()
         {
             //var stackDouble = new StackStrings();
-            var stackDouble = new Stack<string>();
+            var stackDouble = new SimpleStack<string>();
             stackDouble.Push("Nani");
             stackDouble.Push("Potti");
             stackDouble.Push("Nani Potti");
