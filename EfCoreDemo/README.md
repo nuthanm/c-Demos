@@ -15,5 +15,7 @@ Command: Add-Migration <name>
 ~~~
 5. To create a database
 ~~~
-Command: Update-database
+Command: Update-Database
 ~~~
+
+**Note:** Add-Migration and Update-Database commands are going to use if any changes in models and this has to update in database.
