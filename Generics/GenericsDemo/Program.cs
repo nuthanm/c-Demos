@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GenericsDemo.Models;
 
 namespace GenericsDemo
 {
@@ -9,6 +10,7 @@ namespace GenericsDemo
         {
             StackDouble();
             StackStrings();
+            AddEmployeeData();
             Console.ReadLine();
         }
 
@@ -38,6 +40,14 @@ namespace GenericsDemo
             {
                  Console.WriteLine($"Pop Item is : {stackDouble.Pop()}");
             }
+        }
+
+        private static void AddEmployeeData()
+        {
+            var employees = new ListRepository<Employee>();
+            employees.Add(new Employee {FirstName="Nani", LastName="M"});
+            employees.Add(new Employee {FirstName="Potti", LastName="V"});
+            employees.Save();
         }
     }
 }
