@@ -13,3 +13,7 @@ Microsoft.EntityFrameworkcore.design
 ~~~
 Command: Add-Migration <name>
 ~~~
+5. To create a database
+~~~
+Command: Update-database
+~~~
