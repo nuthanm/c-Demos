@@ -19,3 +19,13 @@ Command: Update-Database
 ~~~
 
 **Note:** Add-Migration and Update-Database commands are going to use if any changes in models and this has to update in database.
+**Models with out data annotations**
+
+~~~
+Scaffold-DbContext "<DBConnectionString>" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context <ContextName>
+~~~
+
+**Models with data annotations**
+~~~
+Scaffold-DbContext "<DBConnectionString>" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context <ContextName> -DataAnnotations
+~~~
