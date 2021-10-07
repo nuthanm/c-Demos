@@ -44,3 +44,12 @@ Scaffold-DbContext "<DBConnectionString>" Microsoft.EntityFrameworkCore.SqlServe
 ~~~
 Scaffold-DbContext "<DBConnectionString>" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context <ContextName> -DataAnnotations
 ~~~
+
+**Entity States for DB Operations**
+~~~
+Add Operation - Added
+
+Modify/Update Operation - Modified
+
+Delete Opertion - Deleted
+~~~
