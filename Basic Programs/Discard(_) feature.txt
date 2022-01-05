@@ -1,0 +1,24 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+        _ = 2+3; //Discard feature, If you see any warning like: value is assigned but never used. To fix that use discard (_) 
+        var (a,b) = sendMessage("Hello Potti", false); // a has "Hello Potti", b has false
+		Console.WriteLine(a);
+		Console.WriteLine(b);
+		var (c,_) = sendMessage("Hello Potti", false); // c has "Hello Potti", _ means not going to use
+		Console.WriteLine(c);
+		if(int.TryParse("123",out _))
+		{
+			Console.WriteLine("Given value is an integer");
+		}; // if you dont want to use output parameter anywere in the program the add _
+        
+    }
+    
+    private static (string,bool) sendMessage(string message, bool result)
+    {
+        return (message,result);// Here result parameter never used in this case pass _ while calling this method.
+    }
+}
