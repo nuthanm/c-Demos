@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;					
+public class Program
+{
+	public static void Main()
+	{
+		// C#7 introducted pattern matching with case in switch statement. Earlier we use either int/string
+                // When and type two new ways we can use switch with case statement
+		var numbers = Enumerable.Range(1,110);
+		foreach(var number in numbers)
+		{
+			switch(number)
+			{
+				case 11:
+					Console.WriteLine("Number is out of scope " + number);
+					break;
+				case var num when (num % 2 == 0):
+					Console.WriteLine("Number is prime "+ number);
+					break;
+				default:
+					Console.WriteLine("No value belongs to this range");
+					break;
+			}
+		}
+	}
+}
