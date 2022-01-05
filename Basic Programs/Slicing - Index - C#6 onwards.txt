@@ -1,0 +1,17 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{		
+        var str = "nanilovespotti";
+        Console.WriteLine(str[^4]); // output: 0 => from end ^0 = length, ^1 = i,......
+		// Console.WriteLine(str[^40]); // Unhandled exception. System.IndexOutOfRangeException: Index was outside the bounds of the array.
+		Console.WriteLine(str[str.Length - 5]); // Output:p from end ^0 = length, ^1 = i,......
+		Console.WriteLine(str[9..14]); // output: potti and it starts from 9th and ends at 14th
+		
+		var words = new string[] {"nani","potti","loves","in","chennai"};
+		// Range range = 2..5; // either this way or directly place this value in array
+		words[2..5].Dump();
+	}
+}
