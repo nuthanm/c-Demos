@@ -5,6 +5,7 @@
   Ex: Animal (Base class)
     cat & dog are derived class
     cat & dog inherits Animal properties and methods, also each derived has its own properites and methods.
+    Advantage of Inheritence: Reuse Base class properties and methods in Derived class and Derived class extends the functionality of base class.
 */
 using System;
 					
