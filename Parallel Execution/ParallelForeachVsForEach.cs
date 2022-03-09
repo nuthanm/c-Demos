@@ -2,7 +2,7 @@
 /* Main Difference between Parallel.ForEach vs ForEach
    ForEach works on same thread and order of values in same.
    Parallel.ForEach works on multiple threads and order of values, not in the same way
-   Execution time: traditional faster takes less than to complete when compared with Parallel.ForEach
+   Execution time: traditional foreach is bit faster than Parallel.ForEach, Parallel.ForEach => Variable time which may fast sometimes than traditioanl foreach.
 */
 
 using System;
