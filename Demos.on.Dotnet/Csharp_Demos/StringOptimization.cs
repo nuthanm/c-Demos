@@ -1,9 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Csharp_Demos
 {
@@ -37,7 +33,7 @@ namespace Csharp_Demos
         {
             string maskedValue = maskThisValue.Substring(0, 3);
             int length = maskThisValue.Length - 3;
-            
+
             var sb = new StringBuilder(maskedValue);
 
             for (var i = 0; i < length; i++)
@@ -61,7 +57,7 @@ namespace Csharp_Demos
             int length = maskThisValue.Length - 3;
 
             var asterics = new string('*', length);
-            
+
             return maskedValue + asterics;
 
             /*
@@ -71,6 +67,29 @@ namespace Csharp_Demos
 |                   MaskThisValue | 210.15 ns | 4.245 ns | 4.889 ns | 0.0725 |     304 B |
 | MaskThisValueUsingStringBuilder |  82.66 ns | 1.664 ns | 1.389 ns | 0.0440 |     184 B |
 |  MaskThisValueUsingStringObject |  60.61 ns | 1.331 ns | 1.367 ns | 0.0286 |     120 B |
+
+            */
+        }
+
+        [Benchmark]
+        public string MaskThisValueUsingStringCreate()
+        {
+            return String.Create(maskThisValue.Length, maskThisValue, (span, value) =>
+            {
+                // span has number of array locations and this based on maskThisValue Length
+                value.AsSpan().CopyTo(span);
+                // After the above statement span has actual values copied from value.
+                // AsSpan is casting one
+                span[3..].Fill('*'); // from 3rd location we are filling '*' to the span value.
+            });
+            /*
+           
+|                          Method |      Mean |    Error |    StdDev |    Median |  Gen 0 | Allocated |
+|-------------------------------- |----------:|---------:|----------:|----------:|-------:|----------:|
+|                   MaskThisValue | 214.24 ns | 8.867 ns | 25.153 ns | 206.06 ns | 0.0725 |     304 B |
+| MaskThisValueUsingStringBuilder |  61.70 ns | 2.256 ns |  6.099 ns |  59.58 ns | 0.0440 |     184 B |
+|  MaskThisValueUsingStringObject |  42.84 ns | 0.931 ns |  1.394 ns |  43.03 ns | 0.0287 |     120 B |
+|  MaskThisValueUsingStringCreate |  16.49 ns | 0.425 ns |  0.637 ns |  16.50 ns | 0.0115 |      48 B |
 
             */
         }
