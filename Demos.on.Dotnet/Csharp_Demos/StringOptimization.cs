@@ -46,11 +46,31 @@ namespace Csharp_Demos
             }
             return sb.ToString();
             /*
-             * Strings are immutable it means creates many number of memories.
             |                          Method |      Mean |    Error |   StdDev |   Median |  Gen 0 | Allocated |
 |-------------------------------- |----------:|---------:|---------:|---------:|-------:|----------:|
 |                   MaskThisValue | 148.20 ns | 8.999 ns | 26.53 ns | 133.5 ns | 0.0725 |     304 B |
 | MaskThisValueUsingStringBuilder |  90.54 ns | 8.938 ns | 26.35 ns | 104.5 ns | 0.0440 |     184 B |
+
+            */
+        }
+
+        [Benchmark]
+        public string MaskThisValueUsingStringObject()
+        {
+            string maskedValue = maskThisValue.Substring(0, 3);
+            int length = maskThisValue.Length - 3;
+
+            var asterics = new string('*', length);
+            
+            return maskedValue + asterics;
+
+            /*
+           
+|                          Method |      Mean |    Error |   StdDev |  Gen 0 | Allocated |
+|-------------------------------- |----------:|---------:|---------:|-------:|----------:|
+|                   MaskThisValue | 210.15 ns | 4.245 ns | 4.889 ns | 0.0725 |     304 B |
+| MaskThisValueUsingStringBuilder |  82.66 ns | 1.664 ns | 1.389 ns | 0.0440 |     184 B |
+|  MaskThisValueUsingStringObject |  60.61 ns | 1.331 ns | 1.367 ns | 0.0286 |     120 B |
 
             */
         }
