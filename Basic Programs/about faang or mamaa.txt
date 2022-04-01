@@ -1,0 +1,2 @@
+MAMAA => Meta(Facebook),Apple, Microsoft, Amazon,Alphapet(Google)
+FAANG => Facebook,Apple,Amazon,Netflix ang Google
